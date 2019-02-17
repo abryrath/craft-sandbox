@@ -1,6 +1,8 @@
 {
   "require": {
     "craftcms/cms": "^3.0.0",
+    "unionco/craft-sync-db": "@dev",
+    "unionco/syncdb": "@dev",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
@@ -19,5 +21,23 @@
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ]
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": {
+      "syncdb": {
+          "type": "path",
+          "options": {
+            "symlink": true
+          },
+          "url": "../../Plugins/syncdb"
+      },
+      "craft-sync-db": {
+          "type": "path",
+          "options": {
+            "symlink": true
+          },
+          "url": "../../Plugins/craft-sync-db"
+      }
+    }
 }

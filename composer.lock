@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed6e40d5680ef0b3d326fdb21b79a664",
+    "content-hash": "0e06cd8b3ec17971cca2dd447c85fabc",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -2302,6 +2302,93 @@
             "time": "2019-01-14T15:00:48+00:00"
         },
         {
+            "name": "unionco/craft-sync-db",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../Plugins/craft-sync-db",
+                "reference": "644eb737567ab0e204c389ea128cab96e6345f0c",
+                "shasum": null
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "unionco/syncdb": "dev-master"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "SyncDb",
+                "handle": "sync-db",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "???",
+                "components": {
+                    "sync": "unionco\\craftsyncdb\\services\\Sync"
+                },
+                "class": "unionco\\craftsyncdb\\SyncDb"
+            },
+            "autoload": {
+                "psr-4": {
+                    "unionco\\craftsyncdb\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abry Rath<abryrath@gmail.com>",
+                    "homepage": "https://github.com/unionco"
+                }
+            ],
+            "description": "Craft 3 plugin to sync database across environments",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craft-sync-db",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/unionco/craft-sync-db",
+                "issues": "https://github.com/unionco/craft-sync-db"
+            },
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
+            "name": "unionco/syncdb",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../../Plugins/syncdb",
+                "reference": "f5a526f1b7aa4e88707b598cb6debb5af8353ae7",
+                "shasum": null
+            },
+            "require": {
+                "vlucas/phpdotenv": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "unionco\\syncdb\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abry Rath",
+                    "email": "unionco@gmail.com"
+                }
+            ],
+            "description": "Library to assist with syncing databases across different environments",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.6.1",
             "source": {
@@ -2954,9 +3041,12 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "unionco/craft-sync-db": 20,
+        "unionco/syncdb": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
